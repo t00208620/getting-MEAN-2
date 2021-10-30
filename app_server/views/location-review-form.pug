@@ -1,28 +1,31 @@
-extends layout
 
+include _includes/sharedHTMLfunctions
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ link(rel='stylesheet', href='/stylesheets/style.css')
+ 
 block content
   .row.banner
     .col-12
-      h1 Review Starcups
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapLine}
+
   .row
     .col-12.col-md-8
-      form(action="/location", method="get", role="form")
-        .form-group.row
-          label.col-10.col-sm-2.col-form-label(for="name") Name
-          .col-12.col-sm-10
-            input#name.form-control(name="name")
-        .form-group.row
-          label.col-10.col-sm-2.col-form-label(for="rating") Rating
-          .col-12.col-sm-2
-            select#rating.form-control.input-sm(name="rating")
-              option 5
-              option 4
-              option 3
-              option 2
-              option 1
-        .form-group.row
-          label.col-sm-2.col-form-label(for="review") Review
-          .col-sm-10
-            textarea#review.form-control(name="review", rows="5")
-        button.btn.btn-primary.float-right Add my review
+      each location in locations
+        .card
+          .card-block
+            h4
+              a(href='/location')= location.name
+              +outputRating(location.rating)
+              span.badge.badge-pill.badge-default.float-right= location.distance
+            p.address= location.address
+            .facilities
+              each facility in location.facilities
+                span.badge.badge-warning= facility
+
+
     .col-12.col-md-4
+      p.lead= sidebar
