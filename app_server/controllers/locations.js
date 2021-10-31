@@ -15,31 +15,48 @@ const locationInfo = function(req, res){
 /* GET 'Add review' page */
 const addReview = function(req, res){
   res.render('location-review-form', { title: 'Add review',
-  title: 'Loc8r - find a place to work with wifi',
+  title: 'Ship Information',
   pageHeader: { 
-  title: 'Loc8r', 
+  title: 'Ship Information for the Royal Caribbean Fleet: Sailing times, Departure and Destination, Passenger capacity', 
   strapline: 'Find places to work with wifi near to you!' 
   },
   locations: [{ 
-  name: 'Fatarcups',
-  address: '125 High Street, Reading, RG6 1PS',
-  rating: 3,
-  facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-  distance: '100m'
+  name: 'ADVENTURE -> Max capacity: 5,020',
+  address: 'Cape Liberty NJ, New York -> Galveston, Texas',
+  rating: 5,
+  facilities: ['FLOWRIDER®', 'SPLASHAWAY BAY℠', 'THE PERFECT STORM℠'],
+  distance: 'Departs @ 5P.M.'
   },{
-  name: 'Cafe Hero',
-  address: '125 High Street, Reading, RG6 1PS',
+  name: 'BRILLIANCE -> Max capacity: 2,501',
+  address: 'Tampa, Florida -> Puerto Costa Maya, Mexico',
   rating: 4,
-  facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-  distance: '200m'
+  facilities: ['ROCK CLIMBING WALL', 'MINI GOLF', 'ARCADE'],
+  distance: 'Departs @ 4P.M.'
   },{
-  name: 'Burger Queen',
-  address: '125 High Street, Reading, RG6 1PS',
+  name: 'EXPLORER -> Max capacity: 3,114',
+  address: 'Miami, Florida -> Bridgetown, Barbados',
   rating: 1,
-  facilities: ['Food', 'Premium wifi'],
-  distance: '250m'
-  
-  }]
+  facilities: ['ICE RINK', 'POOL PARTY', 'SURFING'],
+  distance: 'Departs @ 4P.M.' 
+  },{
+    name: 'GRANDEUR -> Max capacity: 1,992',
+    address: 'Bridgetown, Barbados -> Castrieus, St.Lucia',
+    rating: 1,
+    facilities: ['CASINO', 'POOLSIDE MOVIES', 'ROCK CLIMBING'],
+    distance: 'Departs @ 10P.M.' 
+    },{
+      name: 'HARMONY -> Max capacity: 5,749',
+      address: 'Orlanda, Florida -> CocoCay, Bahamas',
+      rating: 1,
+      facilities: ['ULTIMATE ABYSS℠', 'THE PERFECT STORM℠', 'ZIP LINING'],
+      distance: 'Departs @ 5P.M.' 
+      },{
+        name: 'JEWEL -> Max capacity: 2,388',
+        address: 'Miami, Florida -> Conzumel, Mexico',
+        rating: 1,
+        facilities: ['CASINO', 'POOLSIDE MOVIES', 'ROCK CLIMBING'],
+        distance: 'Departs @ 5P.M.' 
+        }]
 });
 
 };
